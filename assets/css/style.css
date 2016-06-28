@@ -95,8 +95,9 @@ header {
 
 .logo img {
     position: absolute;
-    left: 3em;
+    left: 50%;
     top: 3em;
+    transform: translateX(-50%);
     width: 17%;
     padding-bottom: 2em;
 }
@@ -109,7 +110,6 @@ header {
 }
 
 .more-info {
-    box-shadow: .1em .1em .1em rgba(0, 0, 0, 0.6);
     background-color: rgba(0, 0, 0, 0.4);
     position: absolute;
     width: 20%;
@@ -140,6 +140,22 @@ header {
 .spacer {
     margin: .5em 0;
 }
+.info a {
+    float: right;
+    color: white;
+    border: 1px solid #000;
+    background-color: black;
+    margin-right: 1em;
+    border-radius: 0;
+    -webkit-transition: color 0.2ms ease-in-out, background-color 0.2ms ease-in-out;
+    -moz-transition: color 0.2ms ease-in-out, background-color 0.2ms ease-in-out;
+    transition: color 0.2ms ease-in-out, background-color 0.2ms ease-in-out;
+}
+
+.info a:hover {
+    background-color: white;
+    color: black;
+}
 
 .info h3 {
     padding-top: .8em;
@@ -149,7 +165,65 @@ header {
 .info h3:nth-of-type(2) {
     margin-top: 1.5em;
 }
+.inline {
+    display: inline;
+    padding: 0 .5em;
+    font-size: 1.2em;
+}
 
 .danger {
     color: #d9534f;
+}
+
+/*---- Gallery -----*/
+.gallery {
+    padding-top: 5em;
+}
+
+ul.img-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.gallery ul li {
+    display: inline-block;
+    height: 20vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery ul li img{
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: auto;
+}
+
+span.text-content {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    cursor: pointer;
+    height: 15%;
+    position: absolute;
+    left: 0;
+    top: 80%;
+    width: 80%;
+    margin: 0 10% 5%;
+    padding: 0 2em;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+}
+
+span.text-content span{
+    text-align: center;
+    font-size: .8em;
+}
+
+ul.img-list li:hover span.text-content {
+    opacity: 1;
 }
